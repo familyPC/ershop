@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shop.dao.ColumnsDao">
+  	<select id="selectColumnByName"  resultType="Columns">
+  		select a.cid , a.cname  		
+  		from columns  a  
+  		where  a.cname=#{cname} 					
+  	</select>
+  	
+  	
+  	<select id="selectAllColumnsAndGoods" resultMap="ColumnsGoods">
+  		select a.cid,a.cname,b.gid,b.gname,b.price,b.pic,b.remark,b.uploaddate
+  		from columns a ,goods b
+  		where b.columnid = a.cid
+  	</select>
+  	
+  	<resultMap type="Columns" id="ColumnsGoods">
+  		<id column="cid" property="cid" />
+  		<result column="cname" property="cname"/>
+  		
+  		<collection property="goods" javaType="Goods">
+			<id column="gid" property="gid"/>
+			<result column="gname" property="gname"/>
+			<result column="price" property="price"/>
+			<result column="pic" property="pic"/>
+			<result column="remark" property="remark"/>
+			<result column="uploaddate" property="uploaddate"/>
+			<result  column="columnid" property="columns.cid"/>
+		</collection>
+		
+  	</resultMap>
+  	
+  	<select id="selectAllColumn" resultType="Columns">
+  		select a.cid ,a.cname 
+  		
+  		from columns a		
+  		 order by a.cid asc
+  	</select>
+  	<resultMap type="Columns" id="ColumnsAndGoods">
+  		<id column="cid" property="cid" />
+  		<result column="cname" property="cname"/>
+  		
+  		<association property="goods" javaType="Goods">
+			<id column="gid" property="gid"/>
+			<result column="gname" property="gname"/>
+			<result column="price" property="price"/>
+			<result column="pic" property="pic"/>
+			<result column="remark" property="remark"/>
+			<result column="uploaddate" property="uploaddate"/>
+			<result  column="cid" property="columnid"/>
+		</association>
+		
+  	</resultMap>
+  	
+  	<insert id="saveColumnByName" parameterType="String">
+  		insert into columns(cname) values(#{cname})
+  	</insert>
+  	
+  	<delete id="deleteColumnById" parameterType="int">
+  		delete from columns where cid=#{cid}
+  	</delete> 
+  	
+</mapper>

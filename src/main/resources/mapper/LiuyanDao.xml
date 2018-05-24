@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shop.dao.LiuyanDao">
+
+	<select id="selectLiuyanList" resultMap="Liuyanuser">
+		select a.lid ,a.lname ,a.liuyantime,a.content,b.usid ,b.usname ,b.password,b.phone,b.qq,b.email,b.address
+		from liuyan a,users b
+		where a.usersid=b.usid
+		order by a.lid asc	 	
+	</select>
+	<resultMap type="Liuyan" id="Liuyanuser">
+		<id column="lid" property="lid"/>
+		<result column="lname" property="lname"/>
+		<result column="content" property="content"/>
+		<result column="liuyantime" property="liuyantime"/>
+		<result column="usersid" property="users.usid"/>
+		
+		<collection property="users" javaType="Users">
+			<id column="usid" property="usid"/>
+			<result column="usname" property="usname"/>
+			<result column="password" property="password"/>
+			<result column="phone" property="phone"/>
+			<result column="qq" property="qq"/>
+			<result column="email" property="email"/>
+			<result column="address" property="address"/>
+		</collection>
+	</resultMap>
+		
+		
+	<select id="selectLiuyanById" resultMap="Liuyanuser1">
+		select a.lid ,a.lname ,a.liuyantime,a.content,b.usid ,b.usname,b.password,b.phone,b.qq,b.email,b.address
+		from liuyan a,users b
+		where a.usersid=b.usid and a.lid=#{lid}		 	
+	</select>
+	<resultMap type="Liuyan" id="Liuyanuser1">
+		<id column="lid" property="lid"/>
+		<result column="lname" property="lname"/>
+		<result column="content" property="content"/>
+		<result column="liuyantime" property="liuyantime"/>
+		<result column="usersid" property="users.usid"/>
+		
+		<collection property="users" javaType="Users">
+			<id column="usid" property="usid"/>
+			<result column="usname" property="usname"/>
+			<result column="password" property="password"/>
+			<result column="phone" property="phone"/>
+			<result column="qq" property="qq"/>
+			<result column="email" property="email"/>
+			<result column="address" property="address"/>
+		</collection>
+	</resultMap>
+		
+	<delete id="deleteLiuyanById" parameterType="int">
+		delete from Liuyan where lid=#{lid}
+	</delete>
+	
+</mapper>

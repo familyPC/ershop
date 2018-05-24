@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shop.dao.UsersDao">
+
+
+	<select id="selectUserByKey" resultType="Users" >
+		select usid ,usname ,password,phone,qq,email,address 
+				
+		from users 
+		where 1=1 
+		<if test="param1!=null">
+		   and (
+			   	usname like '%'||#{param1}||'%'
+				OR
+				phone like '%'||#{param1}||'%'
+				OR
+				qq like '%'||#{param1}||'%'
+				OR
+				email like '%'||#{param1}||'%'
+				OR 
+				address like '%'||#{param1}||'%')
+		</if>		
+	</select>
+
+	
+	
+	
+	<select id="selectAllUser" resultType="Users">
+		select  b.usid ,b.usname ,b.password,b.phone,b.qq,b.email,b.address
+				
+		from users b
+					 	
+	</select>
+	  <resultMap type="Users" id="UsersAndLiuyan">
+		<id column="usid" property="usid" />
+		<result column="usname" property="usname"/>		
+		<result column="password" property="password"/>
+		<result column="phone" property="phone"/>
+		<result column="qq" property="qq"/>
+		<result column="email" property="email"/>
+		<result column="address" property="address"/>		
+		
+		<collection property="liuyan" javaType="Liuyan" >
+			<id column="lid" property="lid" />
+			<result column="lname" property="lname" />
+			<result column="content" property="content" />
+			<result column="usersid" property="users.usid" />
+		</collection>
+		
+	</resultMap>  
+	
+	<delete id="deleteUserById" parameterType="int">
+		delete from users where usid=#{usid}
+	</delete>
+	<select id="usersLogin" parameterType="String" resultType="Users">
+		select  b.usid ,b.usname ,b.password,b.phone,b.qq,b.email,b.address
+				 
+		from users b
+		where   b.usname=#{usname}
+	</select>
+	
+  
+
+	<select id="selectUsersById" parameterType="int" resultType="Users">
+		select * from users where usid=#{usid}
+	</select>
+
+	<select id="selectGoodsByUsId"  resultMap="GoodsByUsId">
+		select a.usid,a.usname,a.password,a.phone,a.qq,a.email,a.address, b.gid,b.gname,b.price,b.pic,b.remark,b.uploaddate
+		from users a,goods b
+		where a.usid=b.usersid and a.usid=#{usid}
+	</select>
+		<resultMap type="Users" id="GoodsByUsId">
+		<id column="usid" property="usid" />
+		<result column="usname" property="usname"/>		
+		<result column="password" property="password"/>
+		<result column="phone" property="phone"/>
+		<result column="qq" property="qq"/>
+		<result column="email" property="email"/>
+		<result column="address" property="address"/>		
+		
+		<collection property="goods" javaType="Goods">
+			<id column="gid" property="gid"/>
+			<result column="gname" property="gname"/>
+			<result column="price" property="price"/>
+			<result column="pic" property="pic"/>
+			<result column="remark" property="remark"/>
+			<result column="uploaddate" property="uploaddate"/>
+			<result  column="usersid" property="users.usid"/>
+		</collection>
+		
+	</resultMap>
+	
+	
+	<insert id="usersRegister" parameterType="Users">
+		insert into users (usname,password,phone,qq,email,address) 
+		values(#{usname},#{password},#{phone},#{qq},#{email},#{address})
+	</insert>
+
+
+	<select id="selectOrdersByUsId"  resultMap="OrdersByUsId">
+		select a.usid,a.usname,a.password,a.phone,a.qq,a.email,a.address, b.oid,b.oname,b.price,b.pic,b.remark,b.boughtdate
+		from users a,Orders b
+		where a.usid=b.usersid and a.usid=#{usid}
+	</select>
+	<resultMap type="Users" id="OrdersByUsId">
+		<id column="usid" property="usid" />
+		<result column="usname" property="usname"/>		
+		<result column="password" property="password"/>
+		<result column="phone" property="phone"/>
+		<result column="qq" property="qq"/>
+		<result column="email" property="email"/>
+		<result column="address" property="address"/>		
+		
+		<collection property="orders" javaType="Orders">
+			<id column="oid" property="oid"/>
+			<result column="oname" property="oname"/>
+			<result column="price" property="price"/>
+			<result column="pic" property="pic"/>
+			<result column="remark" property="remark"/>
+			<result column="boughtdate" property="boughtdate"/>
+			<result  column="usersid" property="users.usid"/>
+		</collection>
+		
+	</resultMap>
+
+
+</mapper>

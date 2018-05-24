@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shop.dao.NewsDao">
+	
+	<insert id="saveNewsByMessage" parameterType="String">
+		insert into news (messages) values(#{messages})
+	</insert>
+	
+	<select id="selectAllNews" resultType="News">
+		select id ,messages from news order by id asc
+	</select>
+
+	<delete id="deleteNewsById" parameterType="int">
+		delete from news where id =#{id}
+	</delete>
+</mapper>

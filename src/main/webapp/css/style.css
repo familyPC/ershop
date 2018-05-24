@@ -1,0 +1,482 @@
+/*后台管理页面*/
+*{
+	margin: 0;
+	padding: 0;
+}
+a{
+	text-decoration: none;
+}
+.more{
+	width: 1513px;
+	float: left;
+	
+}
+.nav{
+	width: 1513px;
+	height: 100px;
+	border-bottom:10px solid #70F6E4;
+	background:url(../images/nav.png) repeat center;
+}
+
+.logo{
+	margin-top: 20px;
+	margin-left: 30px;
+	float: left;
+	width: 200px;
+	height: 50px;
+	
+}
+
+
+.nav>span{
+	float: left;
+	margin-left: 850px;
+	margin-top: 40px;
+	font-size: 20px;
+	color:#E710F2
+}
+
+.left-nav{
+	float: left;
+	width: 203px;
+	height: 700px;
+	border-right:2px solid #70F6E4;
+	background: url(../images/left-nav.png) repeat center;
+	
+}
+.left-nav>ul>li{
+	text-align: center;
+	padding: 30px;
+	font-size: 18px;
+	color: #8C9BF6;
+	cursor: pointer;
+}
+
+.foot{
+	float: left;
+	width: 1308px;
+	height: 635px;
+	
+}
+
+
+
+
+/*login页面*/
+.top{
+	float: left;
+	width: 1535px;
+	height: 135px;
+	background:url(../images/nav.png) repeat center;
+}
+.top>span{
+	float: left;
+	margin-top: 25px;
+	margin-left: 40px;
+	font-size: 40px;
+	color: #5194F6 ;
+}
+.body{
+	float: left;
+	width: 1535px;
+	height: 623px;
+	background: url(../images/admin-login.jpg) repeat center;
+}
+.login{
+	float: left;
+	width: 550px;
+	height: 350px;
+	margin-top: 85px;
+	margin-left: 475px;	
+	background: url(../images/admin-loginform.png) repeat center;
+}
+.login>form>div{
+	float: left;
+	width: 400px;
+	height: 40px;
+	margin-top: 37px;
+	margin-left: 70px;
+	font-size: 21px;
+	
+	
+}
+.login>form>div>input{	
+	float: right;
+	margin-right: 35px;
+	width: 300px;
+	height: 40px;
+	font-size: 20px;
+}
+.login>form>div> #icode{
+	float: left;
+	margin-left: 60px;
+	width: 135px;
+	height: 40px;
+	font-size: 20px;
+}
+.login>form>div> #kanbq{
+	float: left;
+	margin-top: 10px;
+	font-size: 16px;
+}
+.login>form>div> #submit {
+	float: left;
+	margin-left: 60px;
+	width: 60px;
+	height: 40px;
+	font-size: 20px;
+}
+.login>form>div> #reset{
+	float: left;
+	margin-left: 10px;
+	width: 60px;
+	height: 40px;
+	font-size: 20px;
+}
+
+/*userinfo页面*/
+
+
+.list-body1{
+	float: left;
+	width: 1300px;
+    height:650px;
+    font-size: 24px;
+    background:url("../images/userinfo.png") no-repeat;
+   
+}
+.list-body1>ul>li{
+	float: left;
+	width: 1308px;
+	height: 30px; 
+	font-weight:bold;
+	list-style-type: none;
+	color:#FA5737;
+	margin-left: 25px;
+	margin-top: 25px;
+	
+}
+
+
+
+/* user-list页面*/
+.list{
+	float: left;
+	width: 1308px;
+	height: 500px;
+	
+}
+.list-nav{
+	width: 1308px;
+	height: 55px;
+	border-bottom:3px solid #3978FC;
+	background:url(../images/user-list.png) repeat center;
+}
+
+.list-nav>span{
+	float: left;
+	width: 150px;
+	height: 35px;
+	margin-left: 30px;
+	margin-top: 5px;
+	font-size: 18px;
+	color: #4411F8;
+}
+.zengjia>span{
+	float: left;
+	width: 135px;
+	height: 30px;
+	margin-left: 40px;
+	margin-top: 15px;
+	font-size: 22px;
+	font-weight: bold;
+	color: #F51010;
+	text-align: center;
+	cursor: pointer;
+}
+.search{
+	width: 425px;
+	height: 45px;
+	float: left;
+	margin-left: 880px;
+	margin-top: 0px;
+}
+.inputsearch{
+	width: 245px;
+	height: 45px;
+	float: right;
+	
+}
+.search>div>form>input{
+	width: 200px;
+	height: 35px;
+	float: left;
+	margin-top: 5px;
+	font-size: 20px;
+	
+}
+.search>div>form> #pic{
+	width: 39px;
+	height: 39px;
+	float: left;
+	margin-top:5px;
+	background: url("../images/head_search.gif");
+
+}
+
+.list-body{
+	float: left;
+	width: 1308px;
+    height: 700px;
+}
+.list-body>table>tbody>tr:hover{
+	background-color: #58FCED;
+}
+.list-body>table>tbody>tr{
+	height: 45px;
+	text-align: center;
+	background-color: #C0F8E2;
+	cursor: pointer;
+}
+
+
+/*add-column页面*/
+
+.add-column-body{
+	float: left;
+	width: 1308px;
+    height: 650px;
+    background:#DEF9FB;
+}
+.add-column-body>form{
+	float: left;
+	width: 350px;
+	height: 280px;
+	margin-top: 100px;
+	margin-left: 450px;
+
+}
+.add-column-body>form>input{
+	float: left;
+	width: 346px;
+	height: 150px;
+	border: 2px solid #53FCD8;
+	font-size: 40px;
+	text-align: center;
+	
+}
+.add-column-body>form>span{
+	float: left;
+	width: 80px;
+	height: 80px;
+	margin-top: 25px;
+	margin-left: 130px;
+	border: 0px;
+	color: #E72525;
+	font-size: 25px;
+	text-align: center;
+
+	background-color: #A9F9CD;
+	cursor: pointer;
+	line-height: 75px;
+}
+/*add-news页面*/
+.add-news-body{
+	float: left;
+	width: 1308px;
+    height: 650px;
+    background:#DEF9FB;
+}
+.add-news-body>form{
+	float: left;
+	width: 350px;
+	height: 280px;
+	margin-top: 100px;
+	margin-left: 450px;
+
+}
+.add-news-body>form>textarea{
+	float: left;
+	width: 366px;
+	height: 175px;
+	border: 2px solid #53FCD8;
+	font-size: 35px;
+	text-align: center;
+	
+}
+.add-news-body>form>span{
+	float: left;
+	width: 80px;
+	height: 80px;
+	margin-top: 25px;
+	margin-left: 130px;
+	border: 0px;
+	color: #E72525;
+	font-size: 25px;
+	text-align: center;
+
+	background-color: #A9F9CD;
+	cursor: pointer;
+	line-height: 75px;
+}
+
+
+
+
+#div1{
+	display:none;
+	position: absolute;
+	margin-left: 350px;
+	margin-top: 145px;
+	width: 440px;  
+	height: 300px;
+	z-index: 1;
+	background-color: #A0FAF0;
+	border-top: 1px solid #61CBFC;
+	border-bottom: 4px solid #61CBFC;
+	border-right: 2px solid #61CBFC;
+	border-left: 2px solid #61CBFC;
+}
+.text-out>ul>li{
+	list-style:none;
+	margin-top: 15px; 
+}
+#span3{
+	 float: left;
+	 color: #FFFFFF ;
+	 font-weight: bold;
+}
+#span2{
+	 cursor: pointer ;
+	 color:#FFFFFF;
+	 float: right;
+}
+#div3{
+	align:right;
+	width:440px;
+	height:25px;
+	background-color:#1CB806;
+}
+
+
+
+/*add-goods*/
+
+.add-goods-body{
+	float: left;
+	width: 1308px;
+    height: 655px;
+    background:#DEF9FB;
+}
+
+.add-goods-body>div{
+	float: left;
+	width: 950px;
+	height: 565px;
+	margin-top: 1px;
+	margin-left: 55px;
+	
+}
+.add-goods-body>div>form>div{
+	float: left;
+	width: 550px;
+	height: 75px;
+	margin-top: 5px;
+	margin-left: 5px;
+	
+
+}
+.add-goods-body>div>form>.shangchuan{
+	float: left;
+	width: 550px;
+	height: 95px;
+	margin-top: 5px;
+	margin-left: 5px;
+	
+}
+
+.add-goods-body>div>form>.shangchuan>div{
+	float: left;
+	width: 305px;
+	height: 85px;
+	margin-top: 5px;
+	margin-left: 15px;
+	
+}
+
+.add-goods-body>div>form>.shangchuan>div>.file-input{
+	float: left;
+	width: 295px;
+	height: 35px;
+	margin-top: 5px;
+	font-size: 18px;
+}
+
+
+.add-goods-body>div>form>.jianjie{
+	float: left;
+	width: 550px;
+	height: 165px;
+	margin-top: 5px;
+	margin-left: 5px;
+	
+}
+.add-goods-body>div>form>div>span{
+	float: left;
+	width: 135px;
+	height: 45px;
+	margin-top: 15px;
+	margin-left: 15px;
+	font-size: 22px;
+	color: #392CFC;
+	
+}
+
+.add-goods-body>div>form>div>select{
+	float: left;
+	width: 155px;
+	height: 35px;
+	font-size: 20px;
+	font-weight: bolder;
+	margin-left: 15px;
+	margin-top: 25px;
+	color: #65FA65;
+
+}
+.add-goods-body>div>form>div>input{
+	float: left;
+	width: 295px;
+	height: 45px;
+	margin-top: 15px;
+	margin-left: 15px;
+	font-size: 20px;
+	border: 0px;
+}
+
+.add-goods-body>div>form>div>textarea{
+	float: left;
+	width: 295px;
+	height: 105px;
+	margin-top: 15px;
+	margin-left: 15px;
+	font-size: 20px;
+}
+#tijiao{
+	float: left;
+	width: 65px;
+	height: 35px;
+	font-size: 20px;
+	font-weight: bold;
+	margin-left: 275px;
+	margin-top: 5px;
+	cursor: pointer;
+}
+#quxiao{
+	float: left;
+	width: 65px;
+	height: 35px;
+	font-size: 20px;  
+	font-weight: bold;
+	margin-top: 5px;
+	cursor: pointer;
+}
